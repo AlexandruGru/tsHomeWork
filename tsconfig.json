@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+      "experimentalDecorators": true,
+      "target":"ES6",
+      "lib": ["es2017", "dom"],
+    },
+    "files": [
+      "./homework.ts",
+    ]
+    
+}
