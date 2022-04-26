@@ -126,7 +126,7 @@ enum SomeEnum {
 
 const MethodDecorator = (value): any => {
   return (
-    target: Object,
+    target: SomeClass,
     propertyKey: string | number,
     propertyDescriptor: TypedPropertyDescriptor<number[]>
   ): void => {
@@ -144,7 +144,7 @@ const MethodDecorator = (value): any => {
           res.push(+elem * 50);
         }
       });
-    target.someMethod(res); // do not forget to ask the trainer about the error 'Property 'someMethod' does not exist on type Object'
+    target.someMethod(res);
   };
 };
 
@@ -162,7 +162,6 @@ class SomeClass {
     this.property1 = message;
     this.age = age;
     this.someArray = someArray;
-    // this.someMethod = this.someMethod.bind(this)
   }
 
   @MethodDecorator(SomeEnum)
